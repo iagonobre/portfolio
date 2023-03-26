@@ -1,91 +1,63 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import backgroundImage from '../../public/galaxy.png'
+import codeImage from '../../public/code.png'
+import rightImage from '../../public/rightLine.png'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
+    <div className="flex w-screen h-screen bg-black items-center justify-center">
+      <div className="flex w-full justify-around items-center z-20">
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
+          <h2 className="text-7xl font-bold text-white">Olá.</h2>
+          <div className="flex">
+            <span className="w-4 h-1 mt-1 bg-white rounded-sm" />
+            <div className="ml-2">
+              <p className="text-lg font-medium text-white leading-3">
+                Iago Nobre
+              </p>
+              <p className="text-lg text-gray-300">Software Developer</p>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col mr-8 ">
+          <a className="text-lg text-gray-300 ease-out duration-300 hover:text-2xl hover:text-white">
+            Mobile Apps
+          </a>
+          <a className="text-lg text-gray-300 ease-out duration-300 hover:text-2xl hover:text-white">
+            Websites
+          </a>
+          <a className="text-lg text-gray-300 ease-out duration-300 hover:text-2xl hover:text-white">
+            Backend
           </a>
         </div>
       </div>
-
-      <div className={styles.center}>
+      <div className="flex items-center justify-center fixed w-full h-full">
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src={codeImage}
+          className="fixed h-4/5 z-10"
+          style={{
+            objectFit: 'contain',
+          }}
+          alt="Códigos binários"
         />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
+        <Image
+          src={rightImage}
+          className="fixed h-4/5 z-10"
+          style={{
+            objectFit: 'contain',
+          }}
+          alt="Linha roxa lateral"
+        />
+        <Image
+          src={backgroundImage}
+          style={{
+            objectFit: 'contain',
+            borderImageSource: '',
+          }}
+          className="animate-spin-slow h-4/5 w-min drop-shadow-purple"
+          alt="Fundo de galáxia"
+        />
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   )
 }
