@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 a, button {
-    cursor: pointer;
+  cursor: pointer;
+}
+body {
+  overflow: hidden;
+  background: #000000;
 }
