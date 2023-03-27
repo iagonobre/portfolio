@@ -11,11 +11,14 @@ export function Nav() {
   const name = usePathname()
 
   return (
-    <div className="flex absolute bottom-0 justify-between px-14 py-8 w-full z-10">
-      <Link href="/" className="text-base text-gray-300 hover:text-white">
+    <div className="flex absolute bottom-0 lg:justify-between max-lg:justify-center px-14 py-8 w-full z-10">
+      <Link
+        href="/"
+        className="max-lg:hidden text-base text-gray-300 hover:text-white"
+      >
         iagonobre.com
       </Link>
-      <nav className="flex">
+      <nav className="flex max-lg:hidden">
         <div className="relative flex flex-col items-center justify-center mr-6">
           <Link
             href="/contact"

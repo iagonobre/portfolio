@@ -12,27 +12,27 @@ import circleImage from '../../public/circle.png'
 import leftArrow from '../../public/leftArrow.svg'
 import rightArrow from '../../public/rightArrow.svg'
 import Link from 'next/link'
-import { Nav } from './nav'
 
 export default function Home() {
   return (
-    <div className="flex w-screen h-screen bg-black items-center justify-center flex-col">
-      <motion.div
-        initial={{ width: 0 }}
-        animate={{ width: '100%' }}
-        transition={{
-          duration: 1,
-          ease: 'easeOut',
-        }}
-        className="flex w-full h-full items-center justify-center"
-      >
+    <motion.div
+      initial={{ x: '100%' }}
+      animate={{ x: '0%' }}
+      transition={{
+        duration: 1,
+        ease: 'easeOut',
+      }}
+      exit={{ opacity: 1.5 }}
+      className="absolute top-0 left-0 w-full h-full bg-black"
+    >
+      <div className="flex w-full h-full items-center justify-center">
         <Link
           href="/contact"
           className="flex items-center absolute left-0 max-lg:-bottom-12 h-60 w-60"
         >
           <div className="flex items-center overflow-hidden w-1/2 h-full ease-in duration-100 hover:h-52 hover:w-28 z-10 rounded-br-full rounded-tr-full">
             <Image
-              className="absolute h-full -left-1/2 animate-spin-slow hover:animate-none"
+              className="absolute h-full -left-1/2 animate-spin-slow"
               style={{ objectFit: 'contain' }}
               src={circleImage}
               alt="Círculo roxo"
@@ -119,10 +119,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex items-center justify-end absolute right-0 max-lg:-bottom-12 h-60 w-60 overflow-hidden">
+        <Link
+          href="/portfolio"
+          className="flex items-center justify-end absolute right-0 max-lg:-bottom-12 h-60 w-60 overflow-hidden"
+        >
           <div className="flex justify-end items-center overflow-hidden w-1/2 h-full ease-in duration-100 hover:h-52 hover:w-28 z-10 rounded-bl-full rounded-tl-full">
             <Image
-              className="absolute h-full -right-1/2 animate-spin-slow hover:animate-none"
+              className="absolute h-full -right-1/2 animate-spin-slow"
               style={{ objectFit: 'contain' }}
               src={circleImage}
               alt="Círculo roxo"
@@ -137,9 +140,8 @@ export default function Home() {
               <div className="drop-shadow-darkPurple bg-black rounded-bl-full rounded-tl-full h-1/2 w-1/2" />
             </div>
           </div>
-        </div>
-      </motion.div>
-      <Nav />
-    </div>
+        </Link>
+      </div>
+    </motion.div>
   )
 }

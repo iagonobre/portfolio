@@ -9,3 +9,7 @@ body {
   overflow: hidden;
   background: #000000;
 }
+
+* {
+  box-sizing: border-box;
+}
