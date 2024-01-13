@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 
 import circleImage from '../../../public/circle.png'
 import planet from '../../../public/planet.png'
@@ -10,14 +10,13 @@ import Link from 'next/link'
 
 export default function Contact() {
   return (
-    <motion.div
-      initial={{ x: '100%' }}
-      animate={{ x: '0%' }}
-      transition={{
-        duration: 1.5,
-        ease: 'easeOut',
-      }}
-      exit={{ opacity: 1 }}
+    <div
+      // initial={{ x: '100%' }}
+      // animate={{ x: '0%' }}
+      // transition={{
+      //   duration: 1.5,
+      //   ease: 'easeOut',
+      // }}
       className="absolute top-0 left-0 w-full h-full bg-black"
     >
       <div className="flex w-full h-full items-center">
@@ -45,6 +44,6 @@ export default function Contact() {
           </div>
         </Link>
       </div>
-    </motion.div>
+    </div>
   )
 }

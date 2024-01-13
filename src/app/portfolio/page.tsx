@@ -2,40 +2,47 @@
 
 import Image from 'next/image'
 
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 
 import biggerCircleImage from '../../../public/biggerCircle.png'
-import Link from 'next/link'
 
 export default function Portfolio() {
   return (
-    <motion.div
-      initial={{ x: '100%' }}
-      animate={{ x: '0%' }}
-      transition={{
-        duration: 1.5,
-        ease: 'easeOut',
-      }}
-      exit={{ opacity: 1 }}
+    <div
+      // initial={{ x: '100%' }}
+      // animate={{ x: '0%' }}
+      // transition={{
+      //   duration: 1.5,
+      //   ease: 'easeOut',
+      // }}
       className="absolute top-0 left-0 w-full h-full bg-black"
     >
-      <div className="flex w-full h-full items-center justify-center">
-        <Link
-          href="/"
-          className="flex items-center absolute left-0 max-lg:-bottom-12 h-[26rem] w-[26rem]"
-        >
+      <div className="flex w-full h-full items-center justify-between">
+        <div className="flex items-center max-lg:hidden h-[32rem]">
           <Image
-            className="absolute h-full w-full -left-1/2"
+            className="absolute h-[32rem] w-full -left-1/2"
             style={{ objectFit: 'contain' }}
             src={biggerCircleImage}
             alt="Círculo roxo"
           />
-          <div className="flex items-center overflow-hidden w-1/4 h-1/2 z-10 rounded-br-full rounded-tr-full">
-            <div className="flex items-center drop-shadow-purple border-4 border-lightPurple border-l-0 rounded-br-full rounded-tr-full h-1/2 w-1/2">
-              <div className="drop-shadow-darkPurple bg-black rounded-br-full rounded-tr-full h-1/2 w-1/2" />
-            </div>
+          <div className="flex items-center drop-shadow-purple border-4 border-lightPurple border-l-0 rounded-br-full rounded-tr-full h-[8rem] w-[4rem]">
+            <div className="drop-shadow-darkPurple bg-black rounded-br-full rounded-tr-full h-1/2 w-1/2" />
+
+            <button className="absolute origin text-lg text-left font-bold text-gray-300 ease-out duration-300 hover:text-xl hover:text-white z-10">
+              Mobile Apps
+            </button>
+            <button className="absolute origin text-sm text-left font-bold text-gray-300 ease-out duration-300 hover:text-xl hover:text-white z-10">
+              Mobile Apps
+            </button>
+            <button className="absolute origin text-sm text-left font-bold text-gray-300 ease-out duration-300 hover:text-xl hover:text-white z-10">
+              Mobile Apps
+            </button>
+            <button className="absolute origin text-sm text-left font-bold text-gray-300 ease-out duration-300 hover:text-xl hover:text-white z-10">
+              Mobile Apps
+            </button>
           </div>
-        </Link>
+          <div className="flex flex-col bg-red-500"></div>
+        </div>
 
         <div className="flex justify-between max-lg:p-8">
           <div className="z-30">
@@ -51,6 +58,6 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }

@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 
 import backgroundImage from '../../public/galaxy.png'
 import codeImage from '../../public/code.png'
@@ -15,14 +15,13 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <motion.div
-      initial={{ x: '100%' }}
-      animate={{ x: '0%' }}
-      transition={{
-        duration: 1,
-        ease: 'easeOut',
-      }}
-      exit={{ opacity: 1.5 }}
+    <div
+      // initial={{ x: '100%' }}
+      // animate={{ x: '0%' }}
+      // transition={{
+      //   duration: 1.5,
+      //   ease: 'easeOut',
+      // }}
       className="absolute top-0 left-0 w-full h-full bg-black"
     >
       <div className="flex w-full h-full items-center justify-center">
@@ -106,7 +105,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="flex w-[10rem] flex-col max-lg:hidden z-30">
+          <nav className="flex w-[10rem] flex-col max-lg:hidden z-30">
             <a className="text-lg text-gray-300 ease-out duration-300 hover:text-2xl hover:text-white">
               Mobile Apps
             </a>
@@ -116,7 +115,7 @@ export default function Home() {
             <a className="text-lg text-gray-300 ease-out duration-300 hover:text-2xl hover:text-white">
               Backend
             </a>
-          </div>
+          </nav>
         </div>
 
         <Link
@@ -142,6 +141,6 @@ export default function Home() {
           </div>
         </Link>
       </div>
-    </motion.div>
+    </div>
   )
 }
